@@ -1,0 +1,376 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: #2c2c2c;
+}
+
+main {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-family: inherit;
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.filter-btn:hover {
+    border-color: #999;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+.filter-btn.active {
+    background-color: #2c2c2c;
+    color: #fff;
+    border-color: #2c2c2c;
+}
+
+.filter-btn.active:hover {
+    background-color: #1a1a1a;
+    border-color: #1a1a1a;
+}
+
+.gallery {
+    position: relative;
+    column-count: 3;
+    column-gap: 20px;
+    column-fill: balance;
+}
+
+.gallery-item {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    break-inside: avoid;
+    page-break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    pointer-events: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+    image-rendering: auto;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.gallery-item.loading img {
+    opacity: 0;
+    position: absolute;
+    visibility: hidden;
+}
+
+.gallery-item.loaded img {
+    opacity: 1;
+    position: relative;
+    visibility: visible;
+    transition: none;
+}
+
+.gallery-item.loading {
+    min-height: 200px;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s ease-in-out infinite;
+}
+
+.gallery-item.loaded {
+    background: transparent;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* 模态框样式 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: auto;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+    margin: auto;
+    display: block;
+    object-fit: contain;
+    animation: zoomIn 0.3s ease;
+    transition: opacity 0.2s ease;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    pointer-events: auto;
+}
+
+.modal-content.loading {
+    opacity: 0.5;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    transition: opacity 0.3s ease;
+    line-height: 1;
+}
+
+.close:hover {
+    opacity: 0.7;
+}
+
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 0;
+    user-select: none;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+}
+
+.nav-arrow::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transition: all 0.3s ease;
+}
+
+.nav-arrow-right::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.nav-arrow:hover {
+    opacity: 1;
+}
+
+.nav-arrow:hover::before {
+    transform: translate(-50%, -50%) rotate(-45deg) scale(1.2);
+}
+
+.nav-arrow-right:hover::before {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1.2);
+}
+
+.nav-arrow:active {
+    opacity: 0.7;
+}
+
+.nav-arrow:active::before {
+    transform: translate(-50%, -50%) rotate(-45deg) scale(0.9);
+}
+
+.nav-arrow-right:active::before {
+    transform: translate(-50%, -50%) rotate(45deg) scale(0.9);
+}
+
+.nav-arrow-left {
+    left: 30px;
+}
+
+.nav-arrow-right {
+    right: 30px;
+}
+
+.nav-arrow.hidden {
+    display: none;
+}
+
+/* 响应式设计 - 移动端双列 */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .gallery {
+        column-count: 2;
+        column-gap: 15px;
+    }
+    
+    .gallery-item {
+        margin-bottom: 15px;
+    }
+
+    main {
+        padding: 20px 15px;
+    }
+
+    .filter-buttons {
+        margin-bottom: 30px;
+        gap: 10px;
+    }
+
+    .filter-btn {
+        padding: 8px 18px;
+        font-size: 0.9rem;
+    }
+
+    .close {
+        top: 20px;
+        right: 20px;
+        font-size: 35px;
+    }
+
+    .modal-content {
+        max-width: 95%;
+        max-height: 85vh;
+    }
+
+    .nav-arrow {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .nav-arrow::before {
+        width: 18px;
+        height: 18px;
+        border-width: 1.5px;
+    }
+
+    .nav-arrow-left {
+        left: 15px;
+    }
+
+    .nav-arrow-right {
+        right: 15px;
+    }
+}
+
+/* 小屏幕优化 */
+@media (max-width: 480px) {
+    header {
+        padding: 30px 15px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .gallery {
+        column-gap: 10px;
+    }
+    
+    .gallery-item {
+        margin-bottom: 10px;
+    }
+}

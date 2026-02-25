@@ -3,20 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>摄影作品集</title>
+    <title>Linya Huang's Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>摄影作品集</h1>
+        <h1>Linya Huang's Portfolio</h1>
     </header>
 
     <main>
         <div class="filter-buttons" id="filterButtons">
             <button class="filter-btn active" data-category="all">全部</button>
-            <button class="filter-btn" data-category="在中国">在中国</button>
-            <button class="filter-btn" data-category="在欧洲">在欧洲</button>
             <button class="filter-btn" data-category="孩子们">孩子们</button>
+            <button class="filter-btn" data-category="在欧洲">在欧洲</button>
+            <button class="filter-btn" data-category="在中国">在中国</button>
         </div>
         <div class="gallery" id="gallery">
             <!-- 图片将通过 JavaScript 动态加载 -->
@@ -30,6 +30,10 @@
         <button class="nav-arrow nav-arrow-right" id="nextBtn"></button>
         <img class="modal-content" id="modalImage" src="" alt="">
     </div>
+
+    <footer>
+        <p><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">京ICP备2025157832号</a></p>
+    </footer>
 
     <script src="images-config.js"></script>
     <script src="script.js"></script>

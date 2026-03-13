@@ -81,7 +81,6 @@ const imageCategories = {
         { src: 'images/孩子们/24.jpg', alt: '24', category: '孩子们' },
         { src: 'images/孩子们/25.jpeg', alt: '25', category: '孩子们' },
         { src: 'images/孩子们/798766__03__01.jpg', alt: '798766__03__01', category: '孩子们' },
-        { src: 'images/孩子们/17850968036798378.jpg', alt: '17850968036798378', category: '孩子们' },
         { src: 'images/孩子们/17870178484632611.jpg', alt: '17870178484632611', category: '孩子们' },
         { src: 'images/孩子们/17913344850213765.jpg', alt: '17913344850213765', category: '孩子们' },
         { src: 'images/孩子们/17929768106426193.jpg', alt: '17929768106426193', category: '孩子们' },

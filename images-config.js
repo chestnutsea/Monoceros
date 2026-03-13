@@ -88,7 +88,6 @@ const imageCategories = {
         { src: 'images/孩子们/17981335598817540.jpg', alt: '17981335598817540', category: '孩子们' },
         { src: 'images/孩子们/17985175820470667.jpg', alt: '17985175820470667', category: '孩子们' },
         { src: 'images/孩子们/17990613028578780.jpg', alt: '17990613028578780', category: '孩子们' },
-        { src: 'images/孩子们/18016897889514012.jpg', alt: '18016897889514012', category: '孩子们' },
         { src: 'images/孩子们/18037283506881901.jpg', alt: '18037283506881901', category: '孩子们' },
         { src: 'images/孩子们/18088835968333385.jpg', alt: '18088835968333385', category: '孩子们' },
         { src: 'images/孩子们/18125540488369173.jpg', alt: '18125540488369173', category: '孩子们' },
@@ -101,6 +100,5 @@ const imageCategories = {
         { src: 'images/孩子们/微信图片_20250413095759.jpg', alt: '微信图片_20250413095759', category: '孩子们' },
         { src: 'images/孩子们/DSC04626.JPG', alt: 'DSC04626', category: '孩子们' },
         { src: 'images/孩子们/FIMO_1663346992372_polarr__01-01_polarr.jpg', alt: 'FIMO_1663346992372_polarr__01-01_polarr', category: '孩子们' },
-        { src: 'images/孩子们/FIMO_1681073050778.jpg', alt: 'FIMO_1681073050778', category: '孩子们' },
     ],
 };

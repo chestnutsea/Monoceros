@@ -4,6 +4,16 @@ Object.keys(imageCategories).forEach(category => {
     allImages.push(...imageCategories[category]);
 });
 
+// 对合并后的所有图片进行自然排序（按文件名中的数字）
+allImages.sort((a, b) => {
+    // 提取文件名（去除路径和扩展名）
+    const nameA = a.src.split('/').pop().split('.').shift();
+    const nameB = b.src.split('/').pop().split('.').shift();
+    
+    // 使用自然排序比较
+    return nameA.localeCompare(nameB, undefined, { numeric: true, sensitivity: 'base' });
+});
+
 let currentCategory = 'all';
 let displayedImages = [...allImages];
 let currentImageIndex = -1;

@@ -12,7 +12,7 @@ categories.forEach(category => {
     if (fs.existsSync(categoryPath)) {
         const files = fs.readdirSync(categoryPath)
             .filter(file => /\.(jpg|jpeg|png|webp|gif)$/i.test(file))
-            .sort()
+            .sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }))
             .map(file => ({
                 src: `images/${category}/${file}`,
                 alt: file.replace(/\.[^/.]+$/, ''),

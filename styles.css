@@ -399,3 +399,29 @@ footer a {
 footer a:hover {
     color: #666;
 }
+
+/* 社交媒体链接 */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.social-icon {
+    display: block;
+    width: 24px;
+    height: 24px;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.social-icon:hover {
+    opacity: 1;
+}
+
+.social-icon img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}

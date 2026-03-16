@@ -15,7 +15,6 @@ const imageCategories = {
         { src: 'images/在中国/17976832723237071.jpg', alt: '17976832723237071', category: '在中国' },
         { src: 'images/在中国/18003508316183942.jpg', alt: '18003508316183942', category: '在中国' },
         { src: 'images/在中国/18003776144440656.jpg', alt: '18003776144440656', category: '在中国' },
-        { src: 'images/在中国/18014159575982987.jpg', alt: '18014159575982987', category: '在中国' },
         { src: 'images/在中国/18024018983561238.jpg', alt: '18024018983561238', category: '在中国' },
         { src: 'images/在中国/18024294983039160.jpg', alt: '18024294983039160', category: '在中国' },
         { src: 'images/在中国/18042640012654184.jpg', alt: '18042640012654184', category: '在中国' },
